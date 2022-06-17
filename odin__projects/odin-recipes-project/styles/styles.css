@@ -1,0 +1,103 @@
+:root{
+    --light--grey:#BEBEBE;
+    --dark--grey:#696969;
+    --fontsize--biger:80px;
+    --fontsize--big:64px;
+    --fontsize--normal:20px;
+    --fontsize--small:16px;
+    --fontcolor--normal:#333;
+    --fontcolor--light:#808080;
+    --fontcolor--contrast:#fff;
+    --fontweight--800:800;
+    --fontweight--500:500;
+    --fontweight--200:200;
+}
+*{
+    font-family: "LabGrotesque","Helvetica Neue","Helvetica",Arial,sans-serif;
+    font-size:var(--fontsize--normal);
+}
+body{
+
+}
+.header-wrapper{
+    position:fixed;
+    width:100%;
+    background-color:var(--light--grey);
+    height:50px;
+    display:grid;
+    align-items:center;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+.logo-container{
+    justify-self: flex-start;
+    background-color:aqua;
+    width:40px;
+}
+.nav-menu{
+    justify-self: center;
+    grid-column:2;
+}
+.nav-menu__list{
+    color:var(--fontcolor--contrast);
+    display:flex;
+    gap:80px;
+    font-size: var(--fontsize--normal);
+    font-weight:var(--fontweight--500);
+}
+
+/*main*/
+.main-grid{
+    padding-left:5%;
+    padding-top:50px;
+    height:calc(100vh - 50px);
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+.main-grid__rcontainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-column: 1 / 4;
+}
+.main-grid__rheader{
+    font-weight:var(--fontweight--800);
+    font-size: var(--fontsize--biger);
+    color:var(--fontcolor--normal);
+}
+.main-grid__rtext{
+    color:var(--fontcolor--light);
+    font-weight: var(--fontweight--500);
+}
+.main-grid__bcontainer{
+    display:flex;
+    grid-column:1 / 4;
+    padding-top:40px;
+}
+.img-container{
+    display:flex;
+    gap:40px;
+}
+.img-container__img{
+    border:#333 solid 1px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    cursor:pointer;
+}
+.img-container__img:hover{
+    border:rgb(209, 24, 24) solid 1px;
+}
+
+.main-grid__aside{
+    background-color:var(--light--grey);
+    grid-column:4;
+    grid-row: 1 / 3;
+}
+/*footer*/
+.footer-grid{
+    height:50px;
+    background-color:var(--dark--grey);
+}
