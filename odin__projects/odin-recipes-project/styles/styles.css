@@ -49,10 +49,9 @@ body{
 /*main*/
 .main-grid{
     padding-left:5%;
-    padding-top:50px;
-    height:calc(100vh - 50px);
+    height: calc(100vh - 15px);
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.7fr 1.3fr 1fr;
     grid-template-rows: 1fr 1fr;
 
 }
@@ -60,7 +59,7 @@ body{
     display:flex;
     flex-direction: column;
     justify-content: flex-end;
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
 }
 .main-grid__rheader{
     font-weight:var(--fontweight--800);
@@ -73,31 +72,177 @@ body{
 }
 .main-grid__bcontainer{
     display:flex;
-    grid-column:1 / 4;
+    grid-column:1 / 3;
     padding-top:40px;
+}
+.img-container-menu{
+    position: absolute;
+    right: 400px;
+    bottom: 200px;
+    margin-right: 330px;
+    margin-bottom: 340px;
+    
 }
 .img-container{
     display:flex;
     gap:40px;
 }
-.img-container__img{
-    border:#333 solid 1px;
-    width:50px;
-    height:50px;
+.img-menu{
+    filter:grayscale(80%);
+    width:80px;
+    height:80px;
     border-radius:50%;
     cursor:pointer;
+    border:5px solid rgb(255, 0, 0);
 }
-.img-container__img:hover{
-    border:rgb(209, 24, 24) solid 1px;
+.radioc{
+    visibility: hidden;
+    position:absolute;
+}
+label{
+    z-index: 101;
+    position:absolute;
+    width:100vw;
+    height:100vh;
+}
+.img-menu:hover{
+ filter:initial;
+ border:5px solid #fff;
+}
+.main-grid--header{
+    color:#eb2939;
+}
+
+.img-container--art{
+    position:absolute;
+    bottom:0;
+    content:"";
+    border-radius: 100px 100px 0px 0px;
+    width:100px;
+    height: 40px;
+    background-color: #eb2939;
+    transition: height 0.5s;
+}
+.radiob{
+    position: absolute;
+    width:80px;
+    height:80px;
+    z-index: 100;
+    opacity: 0%;
+    cursor:pointer;
+    
+}
+.radiob:hover~.img-menu{
+    filter:initial;
+    border:5px solid #fff;
+
+}
+.radiob:hover~.img-container--art::after{
+    position:absolute;
+    z-index: -100;
+    bottom:0;
+    content:"";
+    border-radius: 50px 50px 0px 0px;
+    width:100px;
+    height: 285px;
+    background-color: #eb2939;
+}
+
+.img-container__img{
+    z-index: 102;
+    gap:10px;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+.img-container__header{
+    font-size: var(--fontsize--small);
+    font-weight: var(--fontweight--800);
+    color:var(--fontcolor--contrast);
+}
+.img-container__img:hover ~ .{
+    border:#eb2939 solid 1px;
 }
 
 .main-grid__aside{
-    background-color:var(--light--grey);
-    grid-column:4;
+    background-image: url(../img/Bandeira_do_Pará.svg.png);
+    grid-column: 4;
     grid-row: 1 / 3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /*footer*/
 .footer-grid{
     height:50px;
-    background-color:var(--dark--grey);
+    background-color:#eb2939;
+}
+
+/*interactive */
+img{
+    height:300px;
+    width:400px;
+}
+.img-wrapper{
+    z-index: -200;
+    position: absolute;
+    height:300px;
+    width:400px;
+}
+.img-container-menu{
+    opacity:0%;
+    z-index: -100;
+}
+#vatapa:checked~.img-container--art::after{
+    position:absolute;
+    z-index: -100;
+    bottom:0;
+    content:"";
+    border-radius: 50px 50px 0px 0px;
+    width:100px;
+    height: 285px;
+    background-color: #eb2939;
+}
+#tacaca:checked~.img-container--art::after{
+    position:absolute;
+    z-index: -100;
+    bottom:0;
+    content:"";
+    border-radius: 50px 50px 0px 0px;
+    width:100px;
+    height: 285px;
+    background-color: #eb2939;
+}
+#manicoba:checked~.img-container--art::after{
+    position:absolute;
+    z-index: -100;
+    bottom:0;
+    content:"";
+    border-radius: 50px 50px 0px 0px;
+    width:100px;
+    height: 285px;
+    background-color: #eb2939;
+}
+#guarana:checked~.img-container--art::after{
+    position:absolute;
+    z-index: -100;
+    bottom:0;
+    content:"";
+    border-radius: 50px 50px 0px 0px;
+    width:100px;
+    height: 285px;
+    background-color: #eb2939;
+}
+
+#vatapa:checked~.img-wrapper-vatapa{
+    opacity: 100%;
+}
+#tacaca:checked~.img-wrapper-tacaca{
+    opacity: 100%;
+}
+#manicoba:checked~.img-wrapper-manicoba{
+    opacity: 100%;
+}
+#guarana:checked~.img-wrapper-guarana{
+    opacity: 100%;
 }
